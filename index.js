@@ -18,19 +18,30 @@ let addNewProduct = () => {
   let newPhoneName = prompt("Please Enter New Phone Name");
   let newPhonePrice = +prompt("Please Enter New Phone Price");
   let newPhoneQty = +prompt("Please Enter New Phone Qty");
-  products.push(newPhoneName);
-  prices.push(newPhonePrice);
-  qties.push(newPhoneQty);
-  showProducts();
+  if(newPhoneName && newPhonePrice && newPhoneQty){
+    products.push(newPhoneName);
+    prices.push(newPhonePrice);
+    qties.push(newPhoneQty);
+    showProducts();
+  }else{
+    showProducts();
+  }
 };
 
 
 let deleteProduct = () => {
+    
   let indexToDelete = +prompt("Enter Phone No you want to delete");
-  products.splice(indexToDelete, 1);
-  prices.splice(indexToDelete, 1);
-  qties.splice(indexToDelete, 1);
-  showProducts();
+  if(indexToDelete){
+    products.splice(indexToDelete, 1);
+    prices.splice(indexToDelete, 1);
+    qties.splice(indexToDelete, 1);
+    showProducts();
+  }else{
+    showProducts();
+  }
+  
+
 };
 
 
